@@ -1,0 +1,12 @@
+services:
+
+  QAlliance\CrontabManager\Writer:
+    arguments:
+      - '@acrnogor_crontab_manager.user'
+
+  acrnogor_crontab_manager.command.update_command:
+    class: Acrnogor\CrontabManagerBundle\Command\UpdateCommand
+    arguments:
+      - '@acrnogor_crontab_manager.manager.crontab'
+    tags:
+      - { name: 'console.command' }

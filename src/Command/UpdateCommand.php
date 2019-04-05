@@ -2,21 +2,29 @@
 
 namespace Acrnogor\CrontabManagerBundle\Command;
 
-class UpdateCommand
+use Acrnogor\CrontabManagerBundle\Manager\CrontabManager;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+class UpdateCommand extends Command
 {
     private $crontabManager;
+
+    protected static $defaultName = 'acrnogor:crontab:update';
 
     public function __construct(CrontabManager $crontabManager)
     {
         $this->crontabManager = $crontabManager;
+
+        parent::__construct();
     }
 
     protected function configure()
     {
         $this
-            ->setName('maxbrain:crontab:update')
-            ->setDescription('...')
-            ->addOption('force', null, InputOption::VALUE_NONE, 'Will actually update the crontab, otherwise just list it out.', null)
+            ->setName('acrnogor:crontab:update')
+            ->setDescription('Nema smisla')
         ;
     }
 
@@ -26,5 +34,4 @@ class UpdateCommand
         $this->crontabManager->update();
         echo ' > ... DONE.';
     }
-
 }

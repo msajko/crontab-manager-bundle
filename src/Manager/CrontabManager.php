@@ -10,9 +10,10 @@ class CrontabManager
 
     private $cronJobs = [];
 
-    public function __construct(Writer $writer)
+    public function __construct(Writer $writer, array $cronJobs)
     {
         $this->writer = $writer;
+        $this->cronJobs = $cronJobs;
     }
 
     public function update(): void
@@ -23,16 +24,5 @@ class CrontabManager
     public function getWriter(): Writer
     {
         return $this->writer;
-    }
-
-    public function setCronJobs(array $cronJobs): self
-    {
-        $this->cronJobs = $cronJobs;
-        return $this;
-    }
-
-    public function getCronJobs(): array
-    {
-        return $this->cronJobs;
     }
 }
