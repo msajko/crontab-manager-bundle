@@ -1,0 +1,17 @@
+{
+    "name": "acrnogor/crontab-manager-bundle",
+    "description": "Crontab Manager bundle for SF 4.x projects",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ante Crnogorac",
+            "email": "zwer82@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Acrnogor\\CrontabManagerBundle\\": "src/" }
+    },
+    "require": {
+        "q-alliance/crontab-manager": "^0.3.0"
+    }
+}
