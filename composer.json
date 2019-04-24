@@ -2,6 +2,7 @@
     "name": "acrnogor/crontab-manager-bundle",
     "description": "Crontab Manager bundle for SF 4.x projects",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ante Crnogorac",
