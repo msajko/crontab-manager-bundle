@@ -4,8 +4,8 @@ services:
     arguments:
       - '@acrnogor_crontab_manager.user'
 
-  acrnogor_crontab_manager.command.update_command:
-    class: Acrnogor\CrontabManagerBundle\Command\UpdateCommand
+  acrnogor_crontab_manager.command.crontab_update_command:
+    class: Acrnogor\CrontabManagerBundle\Command\CrontabUpdateCommand
     arguments:
       - '@acrnogor_crontab_manager.manager.crontab'
     tags:

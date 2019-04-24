@@ -7,7 +7,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class UpdateCommand extends Command
+class CrontabUpdateCommand extends Command
 {
     private $crontabManager;
 
@@ -24,14 +24,14 @@ class UpdateCommand extends Command
     {
         $this
             ->setName('acrnogor:crontab:update')
-            ->setDescription('Nema smisla')
+            ->setDescription('Update crontab with cron jobs added to configuration')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        echo ' > Starting crontab update...';
+        $output->write('<comment> > Updating crontab ... </comment>');
         $this->crontabManager->update();
-        echo ' > ... DONE.';
+        $output->writeln('<info>DONE. </info>');
     }
 }
