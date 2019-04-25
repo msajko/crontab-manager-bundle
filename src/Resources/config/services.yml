@@ -2,7 +2,7 @@ services:
 
   QAlliance\CrontabManager\Writer:
     arguments:
-      - '@acrnogor_crontab_manager.user'
+      - '%env(CRONTAB_USER)%'
 
   acrnogor_crontab_manager.command.crontab_update_command:
     class: Acrnogor\CrontabManagerBundle\Command\CrontabUpdateCommand
