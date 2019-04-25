@@ -26,7 +26,7 @@ final class Configuration implements ConfigurationInterface
                 ->end()
                 ->arrayNode('cron_jobs')
                     ->info('List of Cron Jobs to add to crontab')
-                    ->scalarPrototype()->end()
+                    ->prototype('scalar')->end()
                 ->end()
             ->end()
         ;
