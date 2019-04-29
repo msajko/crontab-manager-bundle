@@ -1,8 +1,24 @@
 services:
 
+  QAlliance\CrontabManager\CommandLine\TemporaryFile: ~
+
+  QAlliance\CrontabManager\CommandLine\Username:
+    arguments:
+      - '%crontab_user%'
+
+  QAlliance\CrontabManager\CommandLine\Crontab:
+    arguments:
+      - '@QAlliance\CrontabManager\CommandLine\TemporaryFile'
+      - '@QAlliance\CrontabManager\CommandLine\Username'
+
+  QAlliance\CrontabManager\Reader:
+    arguments:
+      - '@QAlliance\CrontabManager\CommandLine\Crontab'
+
   QAlliance\CrontabManager\Writer:
     arguments:
-      - '%env(CRONTAB_USER)%'
+      - '@QAlliance\CrontabManager\CommandLine\Crontab'
+      - '@QAlliance\CrontabManager\Reader'
 
   acrnogor_crontab_manager.command.crontab_update_command:
     class: Acrnogor\CrontabManagerBundle\Command\CrontabUpdateCommand

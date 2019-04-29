@@ -3,7 +3,6 @@
 namespace Acrnogor\CrontabManagerBundle\DependencyInjection;
 
 use Acrnogor\CrontabManagerBundle\Manager\CrontabManager;
-use QAlliance\CrontabManager\Reader;
 use QAlliance\CrontabManager\Writer;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -19,10 +18,6 @@ final class AcrnogorCrontabManagerExtension extends Extension
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
-
-        $definitionReader = new Definition(Reader::class);
-        $definitionReader->setArgument(0, $config['user']);
-        $container->setDefinition('acrnogor_crontab_manager.user', $definitionReader);
 
         $definitionJobs = new Definition(CrontabManager::class);
         $definitionJobs->setArgument(0, $container->getDefinition(Writer::class));

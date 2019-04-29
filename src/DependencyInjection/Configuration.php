@@ -14,16 +14,12 @@ final class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('acrnogor_crontab_manager');
+        $treeBuilder = new TreeBuilder();
 
-        $rootNode = $treeBuilder->getRootNode();
+        $rootNode = $treeBuilder->root('acrnogor_crontab_manager');
 
         $rootNode
             ->children()
-                ->scalarNode('user')
-                    ->isRequired()
-                    ->defaultValue('www-data')
-                ->end()
                 ->arrayNode('cron_jobs')
                     ->info('List of Cron Jobs to add to crontab')
                     ->prototype('scalar')->end()
