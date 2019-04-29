@@ -1,6 +1,6 @@
 {
-    "name": "xacrnogor/crontab-manager-bundle",
-    "description": "XYZCrontab Manager bundle for SF 3.4.x and 4.x projects",
+    "name": "acrnogor/crontab-manager-bundle",
+    "description": "Crontab Manager bundle for SF 3.4.x and 4.x projects",
     "type": "library",
     "license": "MIT",
     "authors": [
