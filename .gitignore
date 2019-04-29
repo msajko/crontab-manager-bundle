@@ -5,6 +5,8 @@
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 
+composer.lock
+
 /vendor/
 *.DS_Store
 
