@@ -31,7 +31,7 @@ class CrontabUpdateCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->write('<comment> > Updating crontab ... </comment>');
-        $this->crontabManager->update();
-        $output->writeln('<info>DONE. </info>');
+        $success = $this->crontabManager->update();
+        $success ? $output->writeln('<info>DONE</info>') : $output->writeln('<error>ERROR</error>');
     }
 }

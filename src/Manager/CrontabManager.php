@@ -16,9 +16,9 @@ class CrontabManager
         $this->cronJobs = $cronJobs;
     }
 
-    public function update(): void
+    public function update(): bool
     {
-        $this->writer->updateManagedCrontab($this->cronJobs);
+        return $this->writer->updateManagedCrontab($this->cronJobs);
     }
 
     public function getWriter(): Writer
