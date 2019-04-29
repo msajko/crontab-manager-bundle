@@ -17,8 +17,8 @@ services:
 
   QAlliance\CrontabManager\Writer:
     arguments:
-      - '@QAlliance\CrontabManager\CommandLine\Crontab'
       - '@QAlliance\CrontabManager\Reader'
+      - '@QAlliance\CrontabManager\CommandLine\Crontab'
 
   acrnogor_crontab_manager.command.crontab_update_command:
     class: Acrnogor\CrontabManagerBundle\Command\CrontabUpdateCommand
